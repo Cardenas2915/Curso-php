@@ -1,3 +1,9 @@
+<?php
+// setcookie("nombre",valor,expiracion,dir,dominio,secure,httponly);
+
+setcookie("Idioma","es",time()-60,"/","localhost","false","true");
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,13 +13,6 @@
     <title>Document</title>
 </head>
 <body>
-
-    <h3>Subir archivp con Php</h3>
-
-    <form action="formulario.php" method="POST" enctype="multipart/form-data">
-        <input type="file" name="fichero">
-        <br>
-        <button type="submit">Enviar</button>
-    </form>
+    
 </body>
 </html>
