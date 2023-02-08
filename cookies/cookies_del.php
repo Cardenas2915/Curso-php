@@ -1,7 +1,8 @@
 <?php
 // setcookie("nombre",valor,expiracion,dir,dominio,secure,httponly);
 
-setcookie("Idioma","es",time()-60,"/","localhost","false","true");
+setcookie("hola","es",time()+60,"/","localhost","false","false");
+
 
 ?>
 <!DOCTYPE html>
