@@ -4,12 +4,72 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bulma.min.css">
     <title>Document</title>
 </head>
 <body>
-    
-    <button onclick="promedio()">Resultado de notas</button>
 
+    <button class="button is-link is-medium is-rounded" onclick="promedio()">Resultado de notas</button>
     <script src="main.js"></script>
+
+    <br>
+    <br>
+
+    <button class="button is-link is-medium is-rounded" onclick="validacion()">INFO</button>
+
+    <br>
+    <br>
+
+    <button class="button is-link is-medium is-rounded" onclick="generar()">Generar numero</button>
+    <br>
+    <br>
+    <div id="mensaje"> </div>
+    
+    <button class="button is-link is-medium is-rounded" onclick="numeros()">Generar los numeros</button>
+    <br>
+    <br>
+    <div id="ms1"></div>
+    <div id="ms2"></div>
+    <div id="ms3"></div>
+
+    
+    <button class="button is-link is-medium is-rounded" onclick="mayor()">Quien es mayor</button>
+    <br>
+    <br>
+    
+    <table class="table is-bordered is-striped">
+    <thead>
+    <tr>
+        <th>Cantidad</th>
+        <th>Nombre</th>
+        <th>Edad</th>
+    </tr>
+    </thead>
+
+    <tbody>
+        <td>Persona 1</td>
+        <td id="nombre1"></td>
+        <td id="edad1"></td>
+    </tbody>
+
+    <tbody>
+        <td>Persona 2</td>
+        <td id="nombre2"></td>
+        <td id="edad2"></td>
+    </tbody>
+
+    <tbody>
+        <td>Persona 3</td>
+        <td id="nombre3"></td>
+        <td id="edad3"></td>
+    </tbody>
+
+    </table>
+
+    <div id="mensajeMayor"> </div>
+
+    <p class="has-text-centered pt-5 pb-5">
+        <a class=" button is-link is-rounded" href="index.html">Aceptar</a>
+    </p>
 </body>
 </html>
