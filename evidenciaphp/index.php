@@ -9,73 +9,111 @@
 </head>
 <body>
     <h3 class="title is-3">Directorio telefonico</h3>
-        <?php
-
-                $datos = [
-                    array("Juan Perez","Cra. 45 # 45 - 56","3456789","23/12/1997"),
-                    array("Pablo Manrique","Clle. 23 # 12 - 19 Sur","3214567","12/10/1980"),
-                    array("Nancy Peña","Av. 34 # 16 - 12","2135426","07/06/2000")
-                ];
-        ?>
 
 <table class="table is-bordered">
     <thead>
-    <tr>
+        <tr>
         <th>Nombre</th>
         <th>Direccion</th>
         <th>Telefono</th>
         <th>Fecha de cumpleaños</th>
-
+        <th>Color</th>
+        <th>significado</th>
         </tr>
     </thead>
-
     <tbody>
-        <tr>
-        <td> <?php echo $datos[0][0]; ?> </td>
-        <td> <?php echo $datos[0][1]; ?> </td>
-        <td> <?php echo $datos[0][2]; ?> </td>
-        <td> <?php echo $datos[0][3]; ?> </td>
-        </tr>
 
-        <tr>
-        <td> <?php echo $datos[1][0]; ?> </td>
-        <td> <?php echo $datos[1][1]; ?> </td>
-        <td> <?php echo $datos[1][2]; ?> </td>
-        <td> <?php echo $datos[1][3]; ?> </td>
-        </tr>
-
-        <tr>
-        <td> <?php echo $datos[2][0]; ?> </td>
-        <td> <?php echo $datos[2][1]; ?> </td>
-        <td> <?php echo $datos[2][2]; ?> </td>
-        <td> <?php echo $datos[2][3]; ?> </td>
-        </tr>
-    </tbody>
-</table>
-<br>
-<br>
 
 <?php
-                $datos1 = [
-                    array("Juan Perez  ","Pablo Manrique  ","3456789  ","Nancy Peña  "),
-                    array("Cra. 45 # 45 - 56  ","Clle. 23 # 12 - 19 Sur  ","Av. 34 # 16 - 12  "),
-                    array("3456789  ","3214567  ","2135426  "),
-                    array("23/12/1997 ","12/10/1980 ","07/06/2000 ")
-                ];
 
-                foreach($datos1 as $nombre1=>$value){
+//Nombre : Eduar Arvey Cardenas Cruz
+//Desarrollo web con PHP
+//Nombre de evidencia:Uso de arreglos
+//se crearon dos arrays unos con los datos de las personas y otro con el significado de los colores, luego 
+// utilizando el foreach imprimo los datos en pantalla con "echo" y llamando cada elemento del arreglo concateno codigo html para estructurar la tabla
+// luego hago la verificacion si el nombre del color es igual a color de las personas imprima el significado del color y cambie la variable encontrado a verdadero
+// si no es igual que verifique la varibale $encontrado e imprima el texto escrito.
 
-                if ($value == 1){
-                    echo $nombre1;
-                }
-                
-                }
+$personas = array(
+    array(
+        'nombre' => 'Juan Perez',
+        'direccion' => 'Cra. 45 # 45 - 56 ',
+        'telefono' => '3456789',
+        'fecha' => '23/12/1997',
+        'color'=>'Rojo'
+    ),
+    array(
+        'nombre' => 'Pablo Manrique',
+        'direccion' => 'Clle. 23 # 12 - 19 Sur',
+        'telefono' => '3214567',
+        'fecha' => '12/10/1980',
+        'color'=>'Verde'
+    ),
+    array(
+        'nombre' => 'Nancy peña',
+        'direccion' => 'Av. 34 # 16 - 12',
+        'telefono' => '2135423',
+        'fecha' => '07/06/2000',
+        'color'=>'Amarillo'
+    ),
+    array(
+        'nombre' => 'Eduar Cardenas',
+        'direccion' => 'Manzana E lote 23',
+        'telefono' => '3228173927',
+        'fecha' => '15/09/1997',
+        'color'=>'Azul'
+        ),
 
+);
 
+$colores = array(
+        array(
+        'nombre' => 'Rojo',
+        'significado' => 'Pasión, amor, energía'
+        ),
+        array(
+        'nombre' => 'Verde',
+        'significado' => 'Naturaleza, crecimiento, equilibrio'
+        ),
+        array(
+        'nombre' => 'Amarillo',
+        'significado' => 'Felicidad, creatividad, optimismo'
+        )
+    );
 
+        foreach ($personas as $persona) {
+        echo "<tr>";
+        echo "<td>".$persona['nombre']."</td>";
+        echo "<td>".$persona['direccion']."</td>";
+        echo "<td>".$persona['telefono']."</td>";
+        echo "<td>".$persona['fecha']."</td>";
+        echo "<td>".$persona['color']."</td>";
+
+        //Buscar el significado del color favorito en el arreglo de colores
+
+        $encontrado = false;
+
+        foreach ($colores as $color) {
+
+            if ($persona['color'] == $color['nombre']) {
+                echo "<td>".$color['significado']."</td>";
+                $encontrado = true;
+                break;
+            }
+            }
+            if (!$encontrado) {
+            echo "<td>No se encuentra el significado</td>";
+            }
+            echo "</tr>";
+        }
+?>
+
+        
+</tbody>
+</table>
         
 
 
-?>
+
 </body>
 </html>
