@@ -18,8 +18,8 @@
     <form action="">
     <input type="text" id="texto-busqueda" placeholder="Ingresa tu búsqueda aquí">
     <div id="resultado-busqueda"></div>
-    <button type="button" id="guardarResultados">Guardar</button>
     </div>
+    <button type="button" id="guardarResultados">Guardar</button>
 </div>
 </form>
 <br>

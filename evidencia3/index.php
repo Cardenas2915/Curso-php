@@ -4,79 +4,83 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=+, initial-scale=1.0">
+    <link rel="stylesheet" href="bulma.min.css">
     <title>Document</title>
 </head>
 <body>
 
-<h1>Operaciones Aritmeticas </h1>
 
-<br>
+<h1>TEATRO</h1>
+<h1>Seleccione un asiento en el teatro</h1>
 
-<form method="POST" action="" autocomplete="off">
-    <label for="num1">Número 1:</label>
-    <input type="text" id="num1" name="valor1" >
-
-    <label for="num2">Número 2:</label>
-    <input type="text" id="num2" name="valor2">
-
-    <label for="operacion">Operación:</label>
-    <select id="operacion" name="operacion">
-    <option value="suma">suma</option>
-    <option value="resta">resta</option>
-    <option value="multiplicacion">multiplicacion</option>
-    <option value="division">division</option>
-    </select>
-
-    <button type="submit">Calcular</button>
-</form>
-
-<br>
-
-
-
+    <table class="table">
+        <thead>
+            <tr>
+            <th>puesto1</th>
+            <th>puesto2</th>
+            <th>puesto3</th>
+            <th>puesto4</th>
+            <th>puesto5</th>
+            </tr>
+        </thead>
+        <tbody>
 <?php
 
-    $valor1 = $_POST['valor1'];
-    $valor2 = $_POST['valor2'];
+error_reporting(0);
 
-    $valor1 = is_numeric($valor1) ? $valor1 : 0;
-    $valor2 = is_numeric($valor2) ? $valor2 : 0;
+$puestos = array  (
+    array('vendido'=>'V'),
+    array('Rerservado'=>'R'),
+    array('liberada'=>'L')
+);
 
-    $operacion = $_POST['operacion'];
 
-function operaciones($valor1,$valor2,$operacion){
-    
-    if ($operacion == "suma") {
+        foreach ($puestos as $puesto){
+            echo  "<tr>";
+            echo  '<td>'.$puesto['liberada'].'</td>';
+            echo  '<td>'.$puesto['liberada'].'</td>';
+            echo  '<td>'.$puesto['liberada'].'</td>';
+            echo  '<td>'.$puesto['liberada'].'</td>';
+            echo  '<td>'.$puesto['liberada'].'</td>';
+            echo  "</tr>";
 
-        $resultado = $valor1 + $valor2;
-
-        } elseif ($operacion == "resta") {
-
-        $resultado = $valor1 - $valor2;
-
-        } elseif ($operacion == "multiplicacion") {
-
-        $resultado = $valor1 * $valor2;
-
-        } elseif ($operacion == "division") {
-
-        $resultado = $valor1 / $valor2;
-
-        } else {
-
-        return "Operación inválida";
 
         }
+            $fila = $_POST['fila'];
+            $asiento = $_POST['asiento'];
+            $accion = $_POST['accion'];
+            $pocision = $fila . $asiento;
+        ?>
+        
+    </tbody>
+    </table>
+    <br>
 
-        return $resultado;
-    }
+    <?php
 
+    ?>
+	<form action="verificar.php" method="POST">
 
-
-$resultado = operaciones($valor1, $valor2,$operacion);
-echo "<h2>El resultado de la operacion es : " . $resultado . "</h2><br>";
-
-?>
+		<label for="fila">Fila:</label>
+		<input type="text" id="fila" name="fila"><br><br>
+		
+		<label for="asiento">Asiento:</label>
+		<input type="text" id="asiento" name="asiento"><br><br>
+		
+		<label>Seleccione una opción:</label><br>
+		<input type="radio" id="reservar" name="accion" value="reservar">
+		<label for="reservar">Reservar</label><br>
+		
+		<input type="radio" id="comprar" name="accion" value="comprar">
+		<label for="comprar">Comprar</label><br>
+		
+		<input type="radio" id="liberar" name="accion" value="liberar">
+		<label for="liberar">Liberar</label><br><br>
+		
+		<input type="submit" value="Enviar">
+	</form>
+</body>
+</html>
 
 </body>
 </html>
